@@ -13,7 +13,8 @@ export const StyledGridItem = styled.div`
   justify-content: center;
   align-items: center;
   margin: 4px;
-  background-color: ${(props) => props.bgColor} ;
+  margin-bottom: 20px;
+  background-color: ${(props) => props.bgColor};
   &:hover {
     cursor: pointer;
   }
@@ -39,4 +40,12 @@ export const StyledGridItem = styled.div`
   .card-body {
     padding: 10px;
   }
+`;
+
+export const StyledResults = styled.h1`
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: 20px;
+  margin-top: 20px;
 `;
