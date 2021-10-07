@@ -10,8 +10,23 @@ function LoginPage(props) {
     setUserList(data);
   }, []);
 
+  const validateEmail = (email) => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+
   const loginHandler = () => {
     let flag = false;
+    const validatedEmail = validateEmail(email);
+    if(!validatedEmail){
+      alert('Invalid Email!');
+      return;
+    }
+    if(password.length<8){
+      alert('Password has les than 8 characters!');
+      return;
+    }
     if (userList) {
       userList.forEach((item) => {
         if (item.email === email && item.password === password) {
@@ -19,18 +34,18 @@ function LoginPage(props) {
         }
       });
     }
-    if(flag){
-      localStorage.setItem('activeUser', JSON.stringify(email));
-      localStorage.setItem('isLoggedIn', JSON.stringify(true));
+    if (flag) {
+      localStorage.setItem("activeUser", JSON.stringify(email));
+      localStorage.setItem("isLoggedIn", JSON.stringify(true));
       props.setIsLoggedIn(true);
-    }else{
-      alert('Incorrect Email or Password');
+    } else {
+      alert("Incorrect Email or Password");
     }
   };
 
-  const signupHandler=()=>{
+  const signupHandler = () => {
     props.setIsSignUp(true);
-  }
+  };
   return (
     <StyledLoginPage>
       <StyledHeading>Anime Search</StyledHeading>

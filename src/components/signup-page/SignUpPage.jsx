@@ -6,8 +6,23 @@ function SignUpPage(props) {
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
 
+  const validateEmail = (email) => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+
   const loginHandler = () => {
     let userList = [];
+    const validatedEmail = validateEmail(email);
+    if (!validatedEmail) {
+      alert("Invalid Email!");
+      return;
+    }
+    if (password.length < 8) {
+      alert("Password has les than 8 characters!");
+      return;
+    }
     const userData = JSON.parse(localStorage.getItem("userList"));
     if (userData) {
       userList = [...userData];
@@ -31,7 +46,7 @@ function SignUpPage(props) {
   };
   return (
     <StyledSignUpPage>
-        <StyledHeading>Anime Search</StyledHeading>
+      <StyledHeading>Anime Search</StyledHeading>
       <div className="login-form">
         <div className="form-group">
           <label>Email address</label>
