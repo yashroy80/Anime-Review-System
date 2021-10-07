@@ -19,12 +19,12 @@ function LoginPage(props) {
   const loginHandler = () => {
     let flag = false;
     const validatedEmail = validateEmail(email);
-    if(!validatedEmail){
-      alert('Invalid Email!');
+    if (!validatedEmail) {
+      alert("Invalid Email!");
       return;
     }
-    if(password.length<8){
-      alert('Password has les than 8 characters!');
+    if (password.length < 8) {
+      alert("Password has less than 8 characters!");
       return;
     }
     if (userList) {
@@ -48,7 +48,7 @@ function LoginPage(props) {
   };
   return (
     <StyledLoginPage>
-      <StyledHeading>Anime Search</StyledHeading>
+      <StyledHeading>Anime Review System</StyledHeading>
       <div className="login-form">
         <div className="form-group">
           <label>Email address</label>

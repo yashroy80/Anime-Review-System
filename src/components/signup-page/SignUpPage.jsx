@@ -20,7 +20,7 @@ function SignUpPage(props) {
       return;
     }
     if (password.length < 8) {
-      alert("Password has les than 8 characters!");
+      alert("Password has less than 8 characters!");
       return;
     }
     const userData = JSON.parse(localStorage.getItem("userList"));
@@ -46,7 +46,7 @@ function SignUpPage(props) {
   };
   return (
     <StyledSignUpPage>
-      <StyledHeading>Anime Search</StyledHeading>
+      <StyledHeading>Anime Review System</StyledHeading>
       <div className="login-form">
         <div className="form-group">
           <label>Email address</label>
