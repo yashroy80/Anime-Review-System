@@ -23,7 +23,7 @@ function LoginPage(props) {
       alert("Invalid Email!");
       return;
     }
-    if (password.length < 8) {
+    if (!password || password.length < 8) {
       alert("Password has less than 8 characters!");
       return;
     }
@@ -48,7 +48,9 @@ function LoginPage(props) {
   };
   return (
     <StyledLoginPage>
-      <StyledHeading><h1>Anime Review System</h1></StyledHeading>
+      <StyledHeading>
+        <h1>Anime Review System</h1>
+      </StyledHeading>
       <div className="login-form">
         <div className="form-group">
           <label>Email address</label>
