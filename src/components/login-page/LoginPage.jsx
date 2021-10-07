@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StyledLoginPage } from "./LoginPage.style";
+import { StyledHeading, StyledLoginPage } from "./LoginPage.style";
 
 function LoginPage(props) {
   const [userList, setUserList] = useState();
@@ -33,6 +33,7 @@ function LoginPage(props) {
   }
   return (
     <StyledLoginPage>
+      <StyledHeading>Anime Search</StyledHeading>
       <div className="login-form">
         <div className="form-group">
           <label>Email address</label>

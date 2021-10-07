@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyledSignUpPage } from "./SignUpPage.style";
+import { StyledHeading, StyledSignUpPage } from "./SignUpPage.style";
 
 function SignUpPage(props) {
   const [email, setEmail] = useState();
@@ -31,6 +31,7 @@ function SignUpPage(props) {
   };
   return (
     <StyledSignUpPage>
+        <StyledHeading>Anime Search</StyledHeading>
       <div className="login-form">
         <div className="form-group">
           <label>Email address</label>
@@ -83,8 +84,8 @@ function SignUpPage(props) {
           SignUp
         </button>
         <button
-          onClick={()=>{
-              props.setIsSignUp(false);
+          onClick={() => {
+            props.setIsSignUp(false);
           }}
           type="submit"
           className="btn btn-primary login-btn"
