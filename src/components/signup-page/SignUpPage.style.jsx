@@ -6,7 +6,7 @@ export const StyledSignUpPage = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-image: url("https://wallpapermoon.com/wp-content/uploads/2021/07/00090191.jpg");
+  background-image: url("https://wallpapermoon.com/wp-content/uploads/2021/07/00090050.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -23,8 +23,8 @@ export const StyledSignUpPage = styled.div`
   }
 `;
 
-export const StyledHeading=styled.h1`
-position:absolute;
-top: 200px;
-color: black;
+export const StyledHeading = styled.h1`
+  position: absolute;
+  top: 200px;
+  color: #fff;
 `;

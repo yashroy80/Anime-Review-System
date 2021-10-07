@@ -6,7 +6,7 @@ width: 100%;
 height: 100vh;
 justify-content: center;
 align-items: center;
-background-image: url("https://wallpapermoon.com/wp-content/uploads/2021/08/00090201.jpg");
+background-image: url("https://wallpapermoon.com/wp-content/uploads/2021/07/00090191.jpg");
 background-repeat: no-repeat;
 background-size: cover;
 
