@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import DetailsModal from "../details-modal/DetailsModal";
 import { StyledGrid, StyledGridItem } from "./ResultPage.style";
 
 function ResultPage(props) {
@@ -14,9 +15,11 @@ function ResultPage(props) {
               key={item.anilist_id}
               className="card"
               style={{ width: "14rem" }}
-              onClick={()=>{
-                  setSelectedAnime(item);
+              data-toggle="modal" data-target="#exampleModal"
+              onClick={() => {
+                setSelectedAnime(item);
               }}
+              bgColor={item.cover_color}
             >
               <img
                 className="card-img-top"
@@ -34,8 +37,8 @@ function ResultPage(props) {
                 </p>
                 <p className="card-text">
                   <strong>Genres: </strong>
-                  {item.genres.map((item, index) => {
-                    return `${item}${index!==item.length-1?', ':'.'}`;
+                  {item.genres.map((childitem, index) => {
+                    return `${childitem}, `;
                   })}
                 </p>
                 <p className="card-text">
@@ -55,6 +58,7 @@ function ResultPage(props) {
                   {item.episodes_count}
                 </p>
               </div>
+              {selectedAnime&&<DetailsModal item={selectedAnime} id={selectedAnime.id} />}
             </StyledGridItem>
           );
         })

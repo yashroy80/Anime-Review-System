@@ -5,7 +5,7 @@ export const StyledGrid = styled.div`
   flex-wrap: wrap;
   padding: 20px;
   width: 100%;
-  min-width: 712px;
+  min-width: 736px;
 `;
 
 export const StyledGridItem = styled.div`
@@ -13,6 +13,7 @@ export const StyledGridItem = styled.div`
   justify-content: center;
   align-items: center;
   margin: 4px;
+  background-color: ${(props) => props.bgColor} ;
   &:hover {
     cursor: pointer;
   }

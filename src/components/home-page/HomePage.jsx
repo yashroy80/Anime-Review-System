@@ -9,18 +9,18 @@ import ResultPage from "./result-page/ResultPage";
 
 const searchOptions = ["Title", "Genre", "Description"];
 
-function HomePage() {
+function HomePage(props) {
   const [animeData, setAnimeData] = useState([]);
   const [selectedOption, setSelectedOption] = useState(searchOptions[0]);
   const [searchInput, setSearchInput] = useState();
   const [resultItems, setResultItems] = useState([]);
+  const [searchClick, setSearchlick] = useState(false);
 
   useEffect(() => {
     (async () => {
       try {
         const data = (await axios.get("https://api.aniapi.com/v1/anime/")).data
           .data;
-        console.log("data", data);
         console.log(data.documents);
         setAnimeData(data.documents);
       } catch (error) {
@@ -53,26 +53,36 @@ function HomePage() {
         }
         return false;
       });
+      setSearchlick(true);
       setResultItems(data);
+    } else {
+      alert("Empty Seacrh Box!");
     }
+  };
+  const logoutHandler = () => {
+    localStorage.setItem("isLoggedIn", JSON.stringify(false));
+    props.setIsLoggedIn(false);
   };
   return (
     <StyledHomePage>
-      <StyledSeacrhBox>
-        <StyledHeading>Search Anime</StyledHeading>
-        <div className="input-group">
+      <StyledSeacrhBox className="search-box">
+        <button className="btn btn-danger logout-btn" onClick={logoutHandler}>
+          Log Out
+        </button>
+        <div className="input-group search-bar">
           <input
             type="text"
             value={searchInput}
             onChange={(e) => {
               setSearchInput(e.target.value);
             }}
+            placeholder="Search Anime..."
             className="form-control"
             aria-label="Text input with dropdown button"
           />
-          <div class="input-group-append">
+          <div className="input-group-append">
             <button
-              className="btn btn-outline-secondary dropdown-toggle"
+              className="btn btn-primary btn-outline-primary dropdown-toggle"
               type="button"
               data-toggle="dropdown"
               aria-haspopup="true"
@@ -101,10 +111,12 @@ function HomePage() {
           Search
         </button>
       </StyledSeacrhBox>
-      {<ResultPage
-        resultItems={resultItems}
-        searchInput={searchInput}
-      ></ResultPage>}
+      {searchClick && (
+        <ResultPage
+          resultItems={resultItems}
+          searchInput={searchInput}
+        ></ResultPage>
+      )}
     </StyledHomePage>
   );
 }
