@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
-  StyledHeading,
   StyledHomePage,
   StyledSeacrhBox,
 } from "./HomePage.style";
@@ -21,7 +20,6 @@ function HomePage(props) {
       try {
         const data = (await axios.get("https://api.aniapi.com/v1/anime/")).data
           .data;
-        console.log(data.documents);
         setAnimeData(data.documents);
       } catch (error) {
         console.log(error);

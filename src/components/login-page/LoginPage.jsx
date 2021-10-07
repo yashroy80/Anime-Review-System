@@ -8,7 +8,6 @@ function LoginPage(props) {
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("userList"));
     setUserList(data);
-    console.log(data);
   }, []);
 
   const loginHandler = () => {

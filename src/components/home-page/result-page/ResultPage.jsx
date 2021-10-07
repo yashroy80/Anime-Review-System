@@ -4,7 +4,6 @@ import { StyledGrid, StyledGridItem } from "./ResultPage.style";
 
 function ResultPage(props) {
   const [selectedAnime, setSelectedAnime] = useState();
-  console.log("selected", selectedAnime);
 
   return (
     <StyledGrid>

@@ -34,7 +34,7 @@ export const StyledSeacrhBox = styled.div`
   }
 
   .logout-btn{
-    position: fixed;
+    position: absolute;
     right: 20px;
     top: 20px;
   }
