@@ -25,5 +25,5 @@ background-size: cover;
 export const StyledHeading=styled.h1`
 position:absolute;
 top: 200px;
-color: #fff;
+color: black;
 `;
