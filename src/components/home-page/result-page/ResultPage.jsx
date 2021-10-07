@@ -7,7 +7,9 @@ function ResultPage(props) {
 
   return (
     <>
-      {props.resultItems.length && <StyledResults>Search Results: </StyledResults>}
+      {props.resultItems.length && (
+        <StyledResults>Search Results: </StyledResults>
+      )}
       <StyledGrid>
         {props.resultItems.length ? (
           props.resultItems.map((item) => {

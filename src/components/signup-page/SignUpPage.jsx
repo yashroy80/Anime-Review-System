@@ -46,7 +46,7 @@ function SignUpPage(props) {
   };
   return (
     <StyledSignUpPage>
-      <StyledHeading>Anime Review System</StyledHeading>
+      <StyledHeading><h1>Anime Review System</h1></StyledHeading>
       <div className="login-form">
         <div className="form-group">
           <label>Email address</label>
@@ -94,7 +94,7 @@ function SignUpPage(props) {
         <button
           onClick={loginHandler}
           type="submit"
-          className="btn btn-secondary"
+          className="btn btn-primary"
         >
           SignUp
         </button>
@@ -103,7 +103,7 @@ function SignUpPage(props) {
             props.setIsSignUp(false);
           }}
           type="submit"
-          className="btn btn-primary login-btn"
+          className="btn btn-secondary login-btn"
         >
           Back to Login
         </button>

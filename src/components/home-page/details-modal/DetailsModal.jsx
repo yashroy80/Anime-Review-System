@@ -2,9 +2,6 @@ import React, { useEffect } from "react";
 import { StyledModal } from "./DetailsModal.style";
 
 function DetailsModal(props) {
-  useEffect(() => {
-    const userData = JSON.parse(localStorage.getItem("userList"));
-  }, []);
   return (
     <StyledModal
       className="modal fade"

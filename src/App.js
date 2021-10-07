@@ -23,7 +23,6 @@ function App() {
           setIsSignUp={setIsSignUp}
         />
       )}
-      {/* <HomePage /> */}
     </div>
   );
 }

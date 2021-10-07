@@ -48,7 +48,7 @@ function LoginPage(props) {
   };
   return (
     <StyledLoginPage>
-      <StyledHeading>Anime Review System</StyledHeading>
+      <StyledHeading><h1>Anime Review System</h1></StyledHeading>
       <div className="login-form">
         <div className="form-group">
           <label>Email address</label>
