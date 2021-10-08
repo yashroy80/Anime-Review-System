@@ -28,7 +28,7 @@ export const StyledHeading = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 5%;
+  top: 7%;
   color: #fff;
   height: 100px;
   background-image: url("https://image.freepik.com/free-vector/blue-copy-space-digital-background_23-2148821698.jpg");
