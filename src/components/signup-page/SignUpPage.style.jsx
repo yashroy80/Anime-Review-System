@@ -30,7 +30,7 @@ export const StyledHeading = styled.div`
   position: absolute;
   top: 150px;
   color: #fff;
-  height: 100px;
+  height: 5%;
   background-image: url("https://image.freepik.com/free-vector/blue-copy-space-digital-background_23-2148821698.jpg");
   border-radius: 20px;
   padding-left: 10px;
